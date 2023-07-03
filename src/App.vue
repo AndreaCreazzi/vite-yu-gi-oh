@@ -11,10 +11,15 @@ export default {
       store
     }
   },
+  methods: {
+    fetchPokemons(url) {
+      axios.get(url).then(res => {
+        store.pokemons.item = res.data.docs
+      })
+    }
+  },
   created() {
-    axios.get(endpoint).then(res => {
-      store.pokemons.item = res.data.docs
-    })
+    this.fetchPokemons(endpoint)
   }
 }
 </script>
