@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template>
-    <div class="pokemon-card  d-flex justify-content-center align-items-center flex-column mb-3">
+    <div class="pokemon-card d-flex justify-content-center align-items-center flex-column mb-3">
         <img :src="image" alt="name">
         <h3>{{ number }}</h3>
         <h4>{{ name }}</h4>
