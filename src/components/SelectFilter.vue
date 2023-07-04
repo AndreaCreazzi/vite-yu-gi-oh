@@ -25,7 +25,13 @@ export default {
             ]
         }
     },
-    emits: ['option-change', 'select-submit']
+    emits: ['option-change', 'select-submit'],
+    methods: {
+        resetFilter() {
+            this.selectType = "";
+            this.$emit('option-change', this.selectType)
+        }
+    },
 }
 </script>
 
@@ -36,6 +42,7 @@ export default {
             <option selected v-for="listType of listTypes">{{ listType }}
             </option>
         </select>
+        <button @click="resetFilter" class="btn btn-warning mt-2">Annulla</button>
     </div>
 </template>
 

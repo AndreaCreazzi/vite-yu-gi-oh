@@ -21,8 +21,12 @@ export default {
     },
     pokemonType(option) {
       this.filteredType = option
-      const filteredEndpoint = `${endpoint}?eq[type1]=${this.filteredType}`
-      this.fetchPokemons(filteredEndpoint)
+      if (this.filteredType === "") {
+        return this.fetchPokemons(endpoint)
+      } else {
+        const filteredEndpoint = `${endpoint}?eq[type1]=${this.filteredType}`
+        this.fetchPokemons(filteredEndpoint)
+      }
     }
   },
   created() {
