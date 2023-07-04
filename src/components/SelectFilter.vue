@@ -26,23 +26,17 @@ export default {
         }
     },
     emits: ['option-change', 'select-submit'],
-    methods: {
-        resetFilter() {
-            this.selectType = "";
-            this.$emit('option-change', this.selectType)
-        }
-    },
 }
 </script>
 
 <template>
     <div class="container mb-5">
         <select @change="$emit('option-change', selectType)" v-model="selectType" id="inputState"
-            class="form-select text-center" placeholder="choose okemon type">
-            <option selected v-for="listType of listTypes">{{ listType }}
+            class="form-select text-center">
+            <option value="">Gotta catch'em all!</option>
+            <option v-for="listType of listTypes">{{ listType }}
             </option>
         </select>
-        <button @click="resetFilter" class="btn btn-warning mt-2">Annulla</button>
     </div>
 </template>
 
