@@ -25,7 +25,7 @@ export default {
             ]
         }
     },
-    emits: ['option-change', 'select-submit'],
+    emits: ['option-change'],
 }
 </script>
 
